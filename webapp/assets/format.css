@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    background-image: url('https://cdn.medcom.id/images/content/2020/04/15/1133466/Tukang_Parkir_di_Yogyakarta_Pakai_Helm_Galon_1.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+  

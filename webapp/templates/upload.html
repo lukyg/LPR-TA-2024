@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container">
+  <br />
+  <form action="#" method="POST" enctype="multipart/form-data">
+    <div class="input-group">
+      <input type="file" class="form-control" name="image_name" required />
+      <input type="submit" value="Upload" class="btn btn-outline-secondary" />
+    </div>
+  </form>
+</div>
+{% if upload %}
+
+<div class="container">
+  <br />
+  <table>
+    <tr>
+      <td>
+        <img
+          class="rounded float-left img-fluid"
+          src="/static/upload/{{upload_image}}"
+          alt=""
+        />
+      </td>
+      <td>
+        <img
+          class="rounded float-right img-fluid"
+          src="/static/predict/{{upload_image}}"
+          alt=""
+        />
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table style="background-color: white; border: solid black; width: 100%">
+    <tr style="text-align: center; border: solid black">
+      <th>ROI dari gambar</th>
+      <th>Hasil bacaan</th>
+    </tr>
+    <tr style="border: solid black">
+      <td style="text-align: center; background-color:white">
+        <img class="img-fluid" src="/static/roi/{{ upload_image }}" alt="" />
+      </td>
+      <td style="text-align: center; background-color: white">
+        <h1 class="display-8">{{ text }}</h1>
+      </td>
+    </tr>
+  </table>
+  <div class="container pt-4 pb-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <table class="mx-auto">
+          <tr>
+            <td class="text-center">
+              <img class="rounded img-fluid" src="/static/result/{{upload_image}}" alt="" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
